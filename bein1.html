@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HLS Player (M3U8)</title>
+    <script src="hls.min.js" type="application/javascript"></script>
+  </head>
+  <body>
+      <h1 style="position: absolute;
+      width: device-width;
+      height: device-height;
+      left: 587px;
+      top: 23px;
+      
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 30px;
+      line-height: 35px;
+      
+      color: #000000;">bein sport 1</h1>
+      <box style="position: absolute;
+      width: 962px;
+      height: 555px;
+      left: 269px;
+      top: 345px;
+      ">
+        <video controls width="device-width" height="device-height"></video>
+        <script>
+          ((source) => {
+            if (typeof Hls == "undefined") return;
+            if (!document.querySelector("video")) return;
+            var hls = new Hls();
+            hls.loadSource(source);
+            hls.attachMedia(document.querySelector("video"));
+          })("http://stream.tvtap.live:8081/live/bein1.stream/chunks.m3u8");
+        </script>
+      </box>
+  </body>
+</html>
